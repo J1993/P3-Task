@@ -3,10 +3,186 @@
     <head>
         
         <title>P3 Task Web Site</title>
-        <link rel="stylesheet" href="mainstyle.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <style>
+            /*Normalization*/
+            *{
+                margin: 0px;
+                padding: 0px;
+                font-family: 'Montserrat', sans-serif;
+                list-style: none;
+                text-decoration: none;
+                box-sizing: border-box;
+            }
 
+            /*Navigation Bar*/
+            .navBar {
+                min-width: 100%;
+                background-color: #d6b41d;
+                height: 65px;
+            }
+
+            /*Logo*/
+            .logo {
+                float: left;
+                margin: 0.5% 0 0.5% 10%;
+            }
+
+            .logo span {
+                border: 2px solid black;
+                border-radius: 10px;
+                font-size: 1.3em;
+                font-weight: bold;
+                padding: 3px
+            }
+
+            /*Categorias*/
+            .categories {
+                display: flex;
+                padding: 1% 0 0 30%;
+            }
+
+            .categories a {
+                color: black;
+                background-color: #d6b41d;
+                padding:10px 12px;
+                display: block;
+                transition: 500ms;
+            }
+
+            .categories a:hover {
+                background-color: dimgray;
+                color: white;
+            }
+
+            .categories li ul {
+                display:none;
+                position:absolute;
+                min-width:200px;
+            }
+
+            .categories li:hover > ul {
+                display: block;
+            }
+
+            .subcategories {
+                display: none;
+            }
+
+            /*Main content*/
+
+            .description {
+                width: auto;
+                margin: 2%;
+            }
+
+            .description h1 {
+                display: inline-block;
+                color: #fff;
+                text-align: center;
+                background-color: #000;
+                font-weight: bold;
+                font-size: 24px;
+                margin-bottom: 1%;
+            }
+
+            .steps {
+                margin: 2% 3%;    
+            }
+
+            .steps li{
+                list-style: decimal;
+            }
+
+            .steps img {
+                border: 1px solid #d6b41d;
+                margin: 1%;
+            }
+
+            /*TIP*/
+            .tip {
+                background-color: beige;
+                display: inline-block;
+                margin: 1% 0;
+                padding-left: 1%;
+                border-left: 5px solid #d6b41d;
+            }
+
+            .tip strong {
+                color: darkgoldenrod;
+            }
+
+            /*Fundaments*/
+            .fundaments {
+                width: auto;
+                margin: 2%;
+                padding: 1%;
+            }
+
+            .singleFundament {
+                width: auto;
+                margin-bottom: 2%;
+            }
+
+            .singleFundament h1 {
+                display: inline-block;
+                color: #fff;
+                text-align: center;
+                background-color: #000;
+                font-weight: bold;
+                font-size: 24px;
+                margin-bottom: 1%;
+            }
+
+            .title {
+                width: 120px;
+                margin-bottom: 1%;
+                color: #fff;
+                text-align: center;
+                box-sizing: border-box;
+                background-color: #000;
+            }
+
+            /*Code*/
+            .coding {
+                margin: 1%;
+                background-color: #eee;
+            }
+
+            .coding code {
+                border-left: 6px solid #d6b41d;
+            }
+
+            .counter {
+                display: inline-block;
+                width: 3%;
+                text-align: right;
+                margin-right: 0.5%;
+                padding-right: 0.5%;
+                color: #919191;
+                border-right: 1px solid #919191;
+            }
+
+            .codeKeyword {
+                padding: 0 10px 0 10px;
+                color: blueviolet;
+            }
+
+            /*Table*/
+            table {
+                margin: 2%;
+                border: 1px solid #d6b41d;
+                text-align: 
+            }
+
+            table th, td:nth-child(1) {
+                background-color: beige;
+                padding: 0.5% 4%;
+            }
+
+            table td:nth-child(2) {
+                padding: 0.5% 4%;
+            }
         </style>
         
     </head>
@@ -18,14 +194,15 @@
             <h1 class="logo"><span>JS</span> JavaScript</h1>
             
             <ul class="categories">
-                <li><a href="#">What is JavaScrip?</a></li>
-                <li><a href="#">Fundaments of Scripting Language</a>
+                <li><a href="#whatIs">What is JavaScrip?</a></li>
+                <li><a href="#fundaments">Fundaments of Scripting Language</a>
                     <ul class="subcategories">
-                        <li><a href="#">Variables</a></li>
-                        <li><a href="#">Comments</a></li>
-                        <li><a href="#">Operators</a></li>
-                        <li><a href="#">Conditionals</a></li>
-                        <li><a href="#">Events</a></li>
+                        <li><a href="#variable">Variables</a></li>
+                        <li><a href="#comments">Comments</a></li>
+                        <li><a href="#operators">Operators</a></li>
+                        <li><a href="#conditions">Conditions</a></li>
+                        <li><a href="#functions">Functions</a></li>
+                        <li><a href="#events">Events</a></li>
                     </ul>
                 </li>
             </ul>
@@ -34,41 +211,233 @@
         
         <div class="content">
             
-            <div class="description">
-                <h1>What is JavaScript?</h1>
+            <div class="description" id="whatIs">
+                <h1>+ What is JavaScript?</h1>
                 <p>JavaScript is programmig language that can be use in a HMTL document and use to create dinamic interactivity on the websites.
                 It was created by Brendan Eich. You can do almost everything with JavaScript, starting with simple things as images galery, fluctuant designs, actions for buttons, etc... It is really compact but flexible at the same time.</p>
             </div>
             
             <div class="description">
-                <h1>Hello World Example</h1>
+                <h1>+ Hello World Example</h1>
                 <p>To continue introducing Javascript, there is a simple example that will show you how javascript works and how can we implement it with HTML. This "HELLO WORLD" is the best way to demonstrate how to use it.</p>
                 
                 <ol class="steps">
-                    <li>Step1</li>
+                    <li>First of all, you should create a folder in your workplace called “javascript” so all the javascript files will be allocated here and there will be an order in your files.</li>
+                    <img src="workplace.PNG"/>
+                    <li>All your javascript files should be ending with “.js” like this: script.js</li>
+                    <span class="tip"><strong>TIP:</strong> In order to declare what kind of file is, like “filename.html” or “mainstyle.css”.</span>
+                    <li>Once you got this, open you “Index.html” and before the element body  you should write this:</li>
+                    
+                    <div class="coding">
+                        <pre><code><span class="counter">1</span>&#60;body></code></pre>
+                        <pre><code><span class="counter">2</span>    &#60;h1>Hello my name is &#60;span>&#60;/span> and this an example&#60;/h1></code></pre>
+                        <pre><code><span class="counter">3</span>    &#60;script src="javascript/script.js">&#60;/script></code></pre>
+                        <pre><code><span class="counter">4</span>&#60;/body></code></pre>
+                    </div>
+                    
+                    <li>As you can see, it is the same way as we link CSS with our HTML file. In addition, I already set a colour for the &#60;p> element and a different one for &#60;span>.</li>
+                    
+                    <span class="tip"><strong>TIP:</strong> Why the script element is allocated at the end of the body? It is a good practice to place the scrit element at the end because the web browser read the code from the top to the bottom so if you put the scrip element before all the content allocated on the body there will be some problems with how we see the content.</span>
+                    
+                    <li>Now in your script.js file you should write the code like this:</li>
+                    
+                    <div class="coding">
+                        <pre><code><span class="counter">1</span><span>var title = document.querySelector(‘h1’);</span></code></pre>
+                        <pre><code><span class="counter">2</span><span>title.innerHTML = ‘Hello World’;</span></code></pre>
+                    </div>
+                    
+                    <li>Now you got a basic javascript code.</li>
+
                 </ol>
-                
-                <pre><code><span class="counter">1</span><span class="codeKeyword">var</span>variableName;</code></pre>
                 
             </div>
         
             <div class="fundaments">
-                <div class="variableFundament">
+              
+               <div class="singleFundament" id="fundaments">
+                <h1>+ Fundaments of Scripting Language</h1>
+                <p>I will try to explain some of the basic functions of JavaScript, to better understand how everything works. These features are used in almost all programming languages. If you can understand those basics, you should be able to start programming on almost anything..</p>
+              </div>
+               
+                <div class="singleFundament" id="variable">
+
                     <h3 class="title">Variable</h3>
+
                     <p>Variables are containers where you can store values. To declare the variable you will use <strong>var</strong> with a name.</p>
+                    <div class="coding">
+                        <pre><code><span class="counter">1</span><span class="codeKeyword">var</span>variableName;</code></pre>
+                    </div>
+                    
 
-                    <pre><code><span class="counter">1</span><span class="codeKeyword">var</span>variableName;</code></pre>
+                    <span class="tip"><strong>TIP:</strong> All the lines in JS should finish with a semicolon to indicate that there ends the line.</span>
+                    <br>
+                    <span class="tip"><strong>TIP:</strong> Keep in mind that Javascript is case sensitive, this means that it distinguishes between uppercase and lowercase. "var title" is not the same as "var TITLE" or "var Title".</span>
 
-                    <p class="PD"><strong>PD:</strong> All the lines in JS should finish with a semicolon to indicate that there ends the line.</p>
+                    <p>When you have a variable you can save data on it:</p>
 
-                    <p class="otherInstructions"></p>
+                    <div class="coding"><pre><code><span class="counter">1</span><span class="">var title = 'Hello world';</span></code></pre></div>
+
+                    <p>And get your value from another part simply by calling your name:</p>
+
+                    <div class="coding"><pre><code><span class="counter">1</span><span class="">title;</span></code></pre></div>
+
+                    <p>This is a list of the types of data that a variable can store:</p>
+
+                    <table>
+                      <tr>
+                       <th>Type</th>
+                       <th>Explanation</th>
+                       <th>Example</th>
+                      </tr>
+                      <tr>
+                          <td>String</td>
+                          <td>This is a chain of characters.</td>
+                          <td>
+                              <p>var variableName = "Oscar";</p>
+
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Number</td>
+                          <td>A number. This kind of data doesn't need quotes.</td>
+                          <td>
+                              <p>var variableName = 20;</p>
+                          </td>
+                      </tr>
+                        <tr>
+                          <td>Boolean</td>
+                          <td>Its value can be true or false.</td>
+                          <td>
+                              <p>var variableName = true;</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Array</td>
+                          <td>A structure where we can store many values in a unique reference.</td>
+                          <td>
+                              <p>var variableName = [1, "Oscar", "Jordy", 10];</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Object</td>
+                          <td>It could be anything. Everything can be an object and can be stored in a variable.</td>
+                          <td>
+                              <p>var variableName = document.querySelector("h1");</p>
+                          </td>
+                      </tr>
+
+
+                    </table>
+
                 </div>
-            </div>
+
+                <div class="singleFundament" id="comments">
+
+                    <h3 class="title">Comments</h3>
+                    <p>Sometimes you need to write code to explain what you are doing or clarify something that may be confusing to another person or to order your code.The way they are written can be 2:</p>
+
+                    <div class="coding"><pre><code><span class="counter">1</span>//This is a single line comment.</code></pre></div>
+
+                    <div class="coding">
+                        <pre><code><span class="counter">1</span>/*</code></pre>
+                        <pre><code><span class="counter">2</span>This is a</code></pre>
+                        <pre><code><span class="counter">3</span>multiline comment.</code></pre>
+                        <pre><code><span class="counter">4</span>*/</code></pre>
+                    </div>
+
+                </div>
+
+                <div class="singleFundament" id="operators">
+
+                    <h3 class="title">Operators</h3>
+                    <p>These are mathematical symbols with which we can do calculations with numbers, put texts together, assign values to variables or verify if two values are equal. This is table with all the operator that exist in javascript:</p>
+
+                    <table>
+                      <tr>
+                       <th>Operator</th>
+                       <th>Explanation</th>
+                       <th>Example</th>
+                      </tr>
+                      <tr>
+                          <td>+</td>
+                          <td>We use it to add to numbers or even join to strings together.</td>
+                          <td>
+                              <p>6 + 9;</p>
+                              <p>"Hello" + "World";</p>
+                      </tr>
+                      <tr>
+                          <td>- , * , /</td>
+                          <td>They do the same as mathematical operators.</td>
+                          <td>
+                              <p>9 - 5;</p>
+                              <p>9 * 5;</p>
+                              <p>9 / 5;</p>
+                          </td>
+                      </tr>
+                        <tr>
+                          <td>==</td>
+                          <td>It checks if two values are the same.</td>
+                          <td>
+                              <p>var variableName = "Oscar";</p>
+                              <p>variableName == "Jordy";</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>!, !=</td>
+                          <td>This checks if two values are not the same or different..</td>
+                          <td>
+                              <p>var variableName = "Oscar";</p>
+                              <p>variableName != "Oscar";</p>
+                          </td>
+                      </tr>                       
+
+                    </table>
+
+                </div>
+
+                <div class="singleFundament" id="conditions">
+
+                    <h3 class="title">Conditions</h3>
+                    <p>Conditionals are used to check if something is true or false and depending on this, execute a part of the code or not. One of the most common conditionals is if-else:.</p>
+                    
+                    <div class="coding">
+                    <pre><code><span class="counter">1</span>var food = "pizza";</code></pre>
+                    <pre><code><span class="counter">2</span>if (food == "pizza") {</code></pre>
+                    <pre><code><span class="counter">3</span>    alert("This is my favourite food");</code></pre>
+                    <pre><code><span class="counter">4</span>} else {</code></pre>
+                    <pre><code><span class="counter">5</span>    alert("Ohh I prefer pizza");</code></pre>
+                    <pre><code><span class="counter">6</span>}</code></pre></div>
+
+                </div>
+
+                <div class="singleFundament" id="functions">
+
+                    <h3 class="title">Functions</h3>
+                    <p>Functions store actions that we want to use again, so you can call that function with a single name, and not do it again. Functions are usually variable with parentheses - () - at the end. Functions often take arguments - pieces of data they need to do their job. These are placed inside the parentheses, and separated with commas if there is more than one.</p>
+
+                    <div class="coding"><pre><code><span class="counter">1</span>funtion add (num1, num2) {</code></pre>
+                    <pre><code><span class="counter">2</span>    var total = num1 + num2;</code></pre>
+                    <pre><code><span class="counter">3</span>    return total;</code></pre>
+                    <pre><code><span class="counter">4</span>}</code></pre></div>
+
+
+                </div>
+
+                <div class="singleFundament" id="events">
+
+                    <h3 class="title">Events</h3>
+                    <p>These are code structures that collect what happens in the browser, and allow a code to be executed in response to the actions that occur. The easiest example is a click (click event), which is activated by clicking on something. To demonstrate this, try entering the following in your console, then click on the current page:</p>
+
+                    <div class="coding"><pre><code><span class="counter">1</span>document.querySelector('html').onclick = function() {</code></pre>
+                    <pre><code><span class="counter">2</span>    alert("Ouch! Please stop"):</code></pre>
+                    <pre><code><span class="counter">3</span>}</code></pre></div>
+
+                </div>
+                
+            </div>            
             
-            
-        </div>
-        
+        </div>       
         
     </body>
-    <!--https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/JavaScript_basics-->
+    
 </html>
